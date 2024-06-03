@@ -24,10 +24,6 @@ const registerUser = asyncHandler(async (req, res) => {
 
     const { fullname, email, username, password } = req.body
 
-    // if(fullname===""){
-    //     throw new ApiError(400, "fullname is required")
-    // }
-
     if ([fullname, email, username, password].some((field) => field?.trim() === "")
 
     ) {
@@ -49,7 +45,6 @@ const registerUser = asyncHandler(async (req, res) => {
     }
 
     const avatarLocalPath = req.files?.avatar[0]?.path
-    // const coverImageLocalPath = req.files?.coverImage[0]?.path
 
 
     let coverImageLocalPath;
